@@ -30,9 +30,7 @@ class RegisterUser(ListView):
         form = self.form(request.POST, request.FILES) 
         if form.is_valid():
             user = form.save()
-            # user.username = "{} {}".format(form.cleaned_data.get('first_name') , form.cleaned_data.get('last_name'))
-            # user.save()
-
+            
             messages.success(request, 'sucessfully created account')
             return redirect('home')
 
@@ -64,7 +62,6 @@ class LoginUser(ListView):
                 messages.success(request, f'successfully logged in as {user.username}')
                 return redirect('/')
             else:
-                print('error gotten')
                 messages.error(request, 'Invalid credentials')
                 return render(request, self.template_name, {'form': form})
         else:

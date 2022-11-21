@@ -1,5 +1,5 @@
 # A simple user authentication and profile application
 
-# Technologies User
+# Technologies Used
 - Django (python web framework)
 - Bootstrap (css styling framework)
